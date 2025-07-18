@@ -23,3 +23,4 @@ permalink: /seminar/
 하드웨어 구축 분야에서는 AI 영상과 AI 오디오의 응용 요구를 지원할 수 있는 효율적인 하드웨어 시스템 설계 및 구현에 집중하고 있다. 연구 내용에는 임베디드 시스템 개발, 고성능 컴퓨팅 하드웨어 설계, 저전력 장치 최적화 등이 포함된다
 
 
+세미나 자료  https://drive.google.com/drive/u/2/folders/0AICHak2j6q5DUk9PVA(링크 하이퍼링크 안보이게)
