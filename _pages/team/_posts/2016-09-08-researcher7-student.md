@@ -3,7 +3,7 @@ layout: member
 category: student
 title: 김민재
 image: kmj.jpg
-role: BS Student
+role: MS Student
 permalink: 'team/researcher-name'
 social:
     twitter: https://twitter.com/
