@@ -3,7 +3,7 @@ layout: member
 category: student
 title: 한정우
 image: hjw.jpg
-role: MS Student
+role: PhD Student
 permalink: 'team/researcher-name'
 social:
     twitter: https://twitter.com/
