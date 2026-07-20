@@ -6,130 +6,58 @@ sitemap: false
 permalink: /team/
 ---
 
-<h1>Member</h1>
+{% assign staff_members = site.posts | where: 'category', 'staff' | sort: 'date' %}
+{% assign student_members = site.posts | where: 'category', 'student' | sort: 'date' %}
+{% assign alumni_members = site.posts | where: 'category', 'alumni' | sort: 'date' %}
+{% assign phd_students = student_members | where: 'role', 'Ph.D. Student' %}
+{% assign ms_students = student_members | where: 'role', 'M.S. Student' %}
+{% assign undergraduate_students = student_members | where: 'role', 'Undergraduate Student' | sort: 'order' %}
+{% assign phd_alumni = alumni_members | where: 'role', 'Ph.D.' %}
+{% assign ms_alumni = alumni_members | where: 'role', 'M.S.' %}
+{% assign bs_alumni = alumni_members | where: 'role', 'BS' %}
 
-<!-- Staff -->
-
-<h2><a id="Professor"></a>Professor</h2>
-{% assign members = site.posts | where: 'category', 'staff' | sort: 'date' %}
-
-{% for member in members %}
-<div class="card team-member-card">
-    <div class="row mt-3">
-        <div class="col-md-2">
-            
-            <img src="{{ site.url }}{{ site.baseurl }}/images/team/{{ member.image }}"
-                class="card-img img-responsive img-thumbnail"
-                style="filter: max-width: 100px;"/>
-            
-        </div>
-        <div class="col-md-8">
-            <div class="card-body">
-            <h4 class="card-title">{{ member.title }}</h4>
-            <p class="card-text">{{ member.role }}</p>
-            <p class="card-text">{{ member.email }}</p>
-            </div>
-        </div>
-    </div>
-</div>
+{% assign alumni_names = '' %}
+{% assign alumni_count = 0 %}
+{% for member in alumni_members %}
+  {% assign alumni_key = '|' | append: member.title | append: '|' %}
+  {% unless alumni_names contains alumni_key %}
+    {% assign alumni_names = alumni_names | append: alumni_key %}
+    {% assign alumni_count = alumni_count | plus: 1 %}
+  {% endunless %}
 {% endfor %}
 
-<style>
-    .card {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 150px; /* 保持卡片高度 */
-        max-width: 100%; /* 限制卡片宽度 */
-        margin: 10px; /* 添加间距 */
-        box-sizing: border-box; /* 包含边框和内边距 */
-    }
+<div class="team-page">
+  <h1 class="team-page-title">Member</h1>
 
-    .card-img {
-        width: 100%;
-        height: auto; /* 自适应高度 */
-    }
-
-    /* 响应式设计 */
-    @media (max-width: 600px) {
-        .card {
-            height: auto; /* 在小屏幕上自动调整高度 */
-        }
-    }
-</style>
-
-
-<!-- <style>
-    .card {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 150px; /* 카드 높이를 균일하게 맞춤 */
-    }
-
-    .card-img {
-        width: 100%;
-        height: auto;
-    }
-</style> -->
-
-<!-- Students -->
-
-<h2><a id="student"></a>Students</h2>
-{% assign members = site.posts | where: 'category', 'student' | sort: 'date' %}
-
-<div class="grid-container">
-    <div class="row">
-        {% for member in members %}
-        <div class="col-md-6 mb-4">
-            <div class="card team-member-card">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="{{ site.url }}{{ site.baseurl }}/images/team/{{ member.image }}"
-                            class="card-img img-responsive img-thumbnail"
-                            style="max-width: 100px;"/>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h4 class="card-title">{{ member.title }}</h4>
-                            <p class="card-text">{{ member.role }}</p>
-                            <p class="card-text">{{ member.email }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
+  <section class="team-section" id="staff">
+    <div class="team-section-heading">
+      <h2>Professor</h2>
+      <span>{{ staff_members | size }} member</span>
     </div>
-</div>
-
-
-<!-- Alumni -->
- 
-<h2><a id="alumni"></a>Alumni</h2>
-{% assign members = site.posts | where: 'category', 'alumni' | sort: 'date' %}
-
-<div class="grid-container">
-    <div class="row">
-        {% for member in members %}
-        <div class="col-md-6 mb-4">
-            <div class="card team-member-card">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="{{ site.url }}{{ site.baseurl }}/images/team/{{ member.image }}"
-                            class="card-img img-responsive img-thumbnail"
-                            style="max-width: 100px;"/>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h4 class="card-title">{{ member.title }}</h4>
-                            <p class="card-text">{{ member.role }}</p>
-                            <p class="card-text">{{ member.email }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
+    <div class="team-grid team-grid--featured">
+      {% for member in staff_members %}
+        {% include team-member-card.html member=member featured=true %}
+      {% endfor %}
     </div>
+  </section>
+
+  <section class="team-section" id="student">
+    <div class="team-section-heading">
+      <h2>Students</h2>
+      <span>{{ student_members | size }} members</span>
+    </div>
+    {% include team-member-group.html title='Ph.D.' members=phd_students %}
+    {% include team-member-group.html title='M.S.' members=ms_students %}
+    {% include team-member-group.html title='Undergraduate' members=undergraduate_students %}
+  </section>
+
+  <section class="team-section" id="alumni">
+    <div class="team-section-heading">
+      <h2>Alumni</h2>
+      <span>{{ alumni_count }} members</span>
+    </div>
+    {% include team-member-group.html title='Ph.D.' members=phd_alumni compact=true dedupe=true %}
+    {% include team-member-group.html title='M.S.' members=ms_alumni compact=true dedupe=true %}
+    {% include team-member-group.html title='BS' members=bs_alumni compact=true dedupe=true %}
+  </section>
 </div>

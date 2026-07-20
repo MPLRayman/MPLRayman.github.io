@@ -1,0 +1,19 @@
+{% if include.members and include.members.size > 0 %}
+  <div class="team-degree-group">
+    <h3 class="team-degree-title">{{ include.title }}</h3>
+    <div class="team-grid{% if include.compact %} team-grid--compact{% endif %}">
+      {% assign rendered_members = '' %}
+      {% for member in include.members %}
+        {% if include.dedupe %}
+          {% assign member_key = '|' | append: member.title | append: '|' %}
+          {% unless rendered_members contains member_key %}
+            {% assign rendered_members = rendered_members | append: member_key %}
+            {% include team-member-card.html member=member %}
+          {% endunless %}
+        {% else %}
+          {% include team-member-card.html member=member %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

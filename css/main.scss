@@ -32,15 +32,231 @@ figcaption {
   margin-right: 0 !important;
 }
 
-.team-member-card {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
   max-width: 900px; /* or 950px */
+}
+
+/* Team */
+
+.team-page {
+  padding-bottom: 28px;
+  text-align: left;
+}
+
+.team-page-title {
+  margin: 0 0 30px;
+  color: #1c2838;
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.team-section {
+  margin: 0 0 46px;
+}
+
+.team-section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dce4ec;
+}
+
+.team-section-heading h2 {
+  margin: 0;
+  color: #27384c;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.team-section-heading span {
+  flex: 0 0 auto;
+  color: #6b7785;
+  font-size: 13px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.team-grid--featured {
+  grid-template-columns: 1fr;
+}
+
+.team-degree-group {
+  margin-top: 18px;
+}
+
+.team-degree-group + .team-degree-group {
+  margin-top: 28px;
+}
+
+.team-degree-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 12px;
+  color: #435368;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.team-degree-title::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background: #e1e8ef;
+}
+
+.team-member-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 132px;
+  padding: 16px;
+  border: 1px solid #dce4ec;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 8px 18px rgba(26, 39, 56, 0.06);
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.team-member-card:hover {
+  border-color: #b7cadc;
+  box-shadow: 0 12px 26px rgba(26, 39, 56, 0.1);
+  transform: translateY(-2px);
+}
+
+.team-member-card--featured {
+  gap: 22px;
+  min-height: 172px;
+  padding: 22px;
+}
+
+.team-member-photo-wrap {
+  flex: 0 0 92px;
+  width: 92px;
+  height: 112px;
+  overflow: hidden;
+  border: 1px solid #e2e8ef;
+  border-radius: 8px;
+  background: #f3f6f9;
+}
+
+.team-member-card--featured .team-member-photo-wrap {
+  flex-basis: 130px;
+  width: 130px;
+  height: 154px;
+}
+
+.team-member-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.team-member-info {
+  min-width: 0;
+}
+
+.team-member-name {
+  margin: 0 0 8px;
+  color: #172230;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.team-member-card--featured .team-member-name {
+  font-size: 26px;
+}
+
+.team-member-role {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #eaf3f1;
+  color: #286256;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.team-member-email {
+  display: block;
+  max-width: 100%;
+  color: #586575;
+  font-size: 14px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.team-member-email:hover,
+.team-member-email:focus {
+  color: #23527c;
+}
+
+@media (max-width: 767px) {
+  .team-page-title {
+    font-size: 32px;
+  }
+
+  .team-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-member-card,
+  .team-member-card--featured {
+    gap: 14px;
+    min-height: 0;
+    padding: 14px;
+  }
+
+  .team-member-photo-wrap,
+  .team-member-card--featured .team-member-photo-wrap {
+    flex-basis: 82px;
+    width: 82px;
+    height: 100px;
+  }
+
+  .team-member-name,
+  .team-member-card--featured .team-member-name {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 420px) {
+  .team-member-card,
+  .team-member-card--featured {
+    align-items: flex-start;
+  }
+
+  .team-member-photo-wrap,
+  .team-member-card--featured .team-member-photo-wrap {
+    flex-basis: 72px;
+    width: 72px;
+    height: 88px;
+  }
+
+  .team-member-email {
+    font-size: 13px;
+  }
 }
 
 /* Carousel */

@@ -3,7 +3,7 @@ layout: member
 category: alumni
 title: Lee Seyoung
 image: xxx.jpg
-role: MS
+role: M.S.
 permalink: 'team/researcher-name'
 social:
     twitter: https://twitter.com/

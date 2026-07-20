@@ -3,7 +3,7 @@ layout: member
 category: student
 title: 이주홍
 image: jhl.jpg
-role: PhD Student
+role: Ph.D. Student
 permalink: 'team/researcher-name'
 social:
     twitter: https://twitter.com/

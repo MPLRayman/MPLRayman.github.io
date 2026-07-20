@@ -3,7 +3,7 @@ layout: member
 category: alumni
 title: Joo Yejong
 image: xxx.jpg
-role: MS
+role: M.S.
 permalink: 'team/researcher-name'
 social:
     twitter: https://twitter.com/

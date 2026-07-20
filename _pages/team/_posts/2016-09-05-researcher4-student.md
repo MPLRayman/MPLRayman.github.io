@@ -2,8 +2,8 @@
 layout: member
 category: student
 title: 김의준
-image: kuj.jpg
-role: PhD Student
+image: kuj2.jpg
+role: Ph.D. Student
 permalink: 'team/researcher-name'
 social:
     twitter: https://twitter.com/
