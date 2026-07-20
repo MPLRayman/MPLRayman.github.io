@@ -1,9 +1,10 @@
 ---
 layout: member
-category: alumni
-title: Kim JungMyung
+category: student
+title: 박관형
 image: xxx.jpg
-role: MS
+role: Undergraduate Student
+order: 2
 permalink: 'team/researcher-name'
 social:
     twitter: https://twitter.com/
@@ -15,8 +16,7 @@ social:
     research-gate: https://www.researchgate.net/
 education:
  - Education
-email: jmkim@rayman.sejong.ac.kr 
+email: parkgh104@naver.com
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-

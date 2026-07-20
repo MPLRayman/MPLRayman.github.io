@@ -2,8 +2,8 @@
 layout: member
 category: student
 title: 최석원
-image: csk.jpg
-role: PhD Student
+image: csk2.png
+role: Ph.D. Student
 permalink: 'team/researcher-name'
 social:
     twitter: https://twitter.com/

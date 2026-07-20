@@ -2,8 +2,8 @@
 layout: member
 category: alumni
 title: Kim Eunjae
-image: xxx.jpg
-role: PhD
+image: kej2.jpg
+role: Ph.D.
 permalink: 'team/researcher-name'
 social:
     twitter: https://twitter.com/

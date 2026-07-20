@@ -2,8 +2,8 @@
 layout: member
 category: alumni
 title: So Jungwoong
-image: xxx.jpg
-role: MS
+image: sjw.jpg
+role: M.S.
 permalink: 'team/researcher-name'
 social:
     twitter: https://twitter.com/

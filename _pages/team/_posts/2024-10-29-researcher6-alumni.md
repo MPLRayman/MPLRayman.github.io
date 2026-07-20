@@ -3,7 +3,7 @@ layout: member
 category: alumni
 title: Kim Dongseok
 image: xxx.jpg
-role: PhD
+role: Ph.D.
 permalink: 'team/researcher-name'
 social:
     twitter: https://twitter.com/

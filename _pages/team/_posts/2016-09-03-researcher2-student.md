@@ -3,7 +3,7 @@ layout: member
 category: student
 title: 김지영
 image: kjy.png
-role: PhD Student
+role: Ph.D. Student
 permalink: 'team/researcher-name'
 social:
     twitter: https://twitter.com/

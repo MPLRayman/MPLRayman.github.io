@@ -1,0 +1,16 @@
+{% assign member_email = include.member.email | strip %}
+<article class="team-member-card{% if include.featured %} team-member-card--featured{% endif %}">
+  <div class="team-member-photo-wrap">
+    <img
+      src="{{ '/images/team/' | append: include.member.image | relative_url }}"
+      alt="{{ include.member.title }} profile photo"
+      class="team-member-photo">
+  </div>
+  <div class="team-member-info">
+    <h3 class="team-member-name">{{ include.member.title }}</h3>
+    <p class="team-member-role">{{ include.member.role }}</p>
+    {% if member_email and member_email != '' %}
+      <a class="team-member-email" href="mailto:{{ member_email }}">{{ member_email }}</a>
+    {% endif %}
+  </div>
+</article>

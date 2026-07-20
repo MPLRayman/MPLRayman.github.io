@@ -3,7 +3,7 @@ layout: member
 category: student
 title: 한윤호
 image: hyh.png
-role: PhD Student
+role: Ph.D. Student
 permalink: 'team/researcher-name'
 social:
     twitter: https://twitter.com/
