@@ -2,7 +2,7 @@
 layout: member
 category: student
 title: 박관형
-image: xxx.jpg
+image: pgh.jpg
 role: Undergraduate Student
 order: 2
 permalink: 'team/researcher-name'
