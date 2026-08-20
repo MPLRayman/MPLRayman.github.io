@@ -6,7 +6,7 @@ sitemap: false
 permalink: /research/
 ---
 
-<div class="section-layout research-page">
+<div class="section-layout research-page" markdown="0">
   {% include research-sidebar.html %}
   <div class="section-content">
     <div class="page-hero">
