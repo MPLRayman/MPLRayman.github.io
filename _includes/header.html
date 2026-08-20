@@ -8,19 +8,26 @@
 		<span class="icon-bar"></span>
 	  </button>
 
-	  <a class="navbar-brand" href="{{ site.url }}{{ site.baseurl }}">{{ site.title }}</a>
+	  <a class="navbar-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
 	  
 	</div>
 	<div class="collapse navbar-collapse" id="navbar-collapse-1">
 	  <ul class="nav navbar-nav navbar-right">
-		<li><a href="{{ site.url }}{{ site.baseurl }}">Home</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/team">Member</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/news">News & Awards</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/research">Research</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/projects">Projects</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/publications">Publications</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/seminar">Seminar</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/video">Video</a></li>
+		<li><a href="{{ '/' | relative_url }}">Home</a></li>
+		<li class="nav-member-dropdown">
+		  <a href="{{ '/team/' | relative_url }}" aria-haspopup="true">Member</a>
+		  <ul class="nav-member-menu" aria-label="Member pages">
+			<li><a href="{{ '/team/' | relative_url }}">Professor</a></li>
+			<li><a href="{{ '/team/students/' | relative_url }}">Students</a></li>
+			<li><a href="{{ '/team/alumni/' | relative_url }}">Alumni</a></li>
+		  </ul>
+		</li>
+		<li><a href="{{ '/news/' | relative_url }}">News & Awards</a></li>
+		<li><a href="{{ '/research/' | relative_url }}">Research</a></li>
+		<li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
+		<li><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
+		<li><a href="{{ '/seminar/' | relative_url }}">Seminar</a></li>
+		<li><a href="{{ '/board/' | relative_url }}">Board</a></li>
 	  </ul>
 	</div>
   </div>

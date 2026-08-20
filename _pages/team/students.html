@@ -1,0 +1,30 @@
+---
+title: "Students"
+layout: default
+excerpt: "Current MPL students"
+sitemap: false
+permalink: /team/students/
+member_section: students
+---
+
+{% assign student_members = site.posts | where: 'category', 'student' | sort: 'date' %}
+{% assign phd_students = student_members | where: 'role', 'Ph.D. Student' %}
+{% assign ms_students = student_members | where: 'role', 'M.S. Student' %}
+{% assign undergraduate_students = student_members | where: 'role', 'Undergraduate Student' | sort: 'order' %}
+
+<div class="section-layout team-page">
+  {% include member-tabs.html %}
+  <div class="section-content">
+    <div class="page-hero team-page-hero">
+      <p class="page-eyebrow">Members</p>
+      <h1>Students</h1>
+      <p class="page-lead">Ph.D. {{ phd_students | size }} · M.S. {{ ms_students | size }} · Undergraduate {{ undergraduate_students | size }}</p>
+    </div>
+
+    <section class="team-section">
+      {% include team-member-group.html title='Ph.D.' members=phd_students %}
+      {% include team-member-group.html title='M.S.' members=ms_students %}
+      {% include team-member-group.html title='Undergraduate' members=undergraduate_students %}
+    </section>
+  </div>
+</div>

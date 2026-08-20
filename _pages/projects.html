@@ -6,149 +6,45 @@ sitemap: false
 permalink: /projects/
 ---
 
-<h1>{{page.title}}</h1>
+{% assign ongoing_projects = site.data.projects | where: "status", "ongoing" %}
+{% assign completed_projects = site.data.projects | where: "status", "completed" %}
 
-<style>
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
+<div class="project-page-header">
+  <h1>Projects</h1>
+  <p>Funded research projects and collaborations in graphics processors, AI hardware, immersive audio, XR, and embedded systems.</p>
+</div>
 
-    th, td {
-        border-top: 1px solid black;
-        border-bottom: 1px solid black;
-        padding: 8px;
-        text-align: left;
-    }
+<p class="project-summary-line">
+  Current projects are listed first, followed by completed projects.
+</p>
 
-    th {
-        border-left: 1px solid black;
-        border-right: 1px solid black;
-    }
-
-    .col1 {
-            width: 40%;
-        }
-    .col2 {
-            width: 20%;
-            text-align: center;
-        }
-    .col3, .col4 {
-            width: 10%;
-            text-align: center;
-        }
-    .col5 {
-            width: 40%;
-            text-align: center;
-        }
-
-
-</style>
-
-<table class="table">
+<div class="project-table-wrap">
+  <table class="data-table project-table project-table--plain">
     <thead>
-        <tr>
-            <th class="col5">Project Name</th>
-            <th class="col2">Ministry</th>
-            <th class="col3">Start Date</th>
-            <th class="col4">End Date</th>
-        </tr>
+      <tr>
+        <th>Project</th>
+        <th>Ministry</th>
+        <th>Period</th>
+        <th>Status</th>
+      </tr>
     </thead>
     <tbody>
-        <tr>
-            <td class="col1">다중 사용자 인터랙션 및 VIRTUAL BEING 지원을 위한 다목적 방송 스튜디오 플랫폼 개발</td>
-            <td class="col2">문화체육관광부</td>
-            <td class="col3">Apr-22</td>
-            <td class="col4">Dec-24</td>
+      {% for project in ongoing_projects %}
+        <tr class="is-ongoing">
+          <td>{{ project.title }}</td>
+          <td>{{ project.ministry }}</td>
+          <td>{{ project.start_date }} - {{ project.end_date }}</td>
+          <td><span class="project-state project-state--ongoing">Ongoing</span></td>
         </tr>
+      {% endfor %}
+      {% for project in completed_projects %}
         <tr>
-            <td class="col1">실-가상 연계 메타버스를 위한 초실감 XR 기술 연구</td>
-            <td class="col2">과학기술정보통신부</td>
-            <td class="col3">Jul-22</td>
-            <td class="col4">Dec-29</td>
+          <td>{{ project.title }}</td>
+          <td>{{ project.ministry }}</td>
+          <td>{{ project.start_date }} - {{ project.end_date }}</td>
+          <td><span class="project-state">Completed</span></td>
         </tr>
-        <tr>
-            <td class="col1">실사 수준의 실시간 처리하기 위한 bi-directional path tracing 프로세서 설계</td>
-            <td class="col2">과학기술정보통신부</td>
-            <td class="col3">Mar-19</td>
-            <td class="col4">Dec-23</td>
-        </tr>
-        <tr>
-            <td class="col1">인공지능을 위한 압축 알고리즘 연구</td>
-            <td class="col2">세종대학교 산학협력단</td>
-            <td class="col3">May-21</td>
-            <td class="col4">Jan-23</td>
-        </tr>
-        <tr>
-            <td class="col1">모바일 기기에 내장 기능한 동작 실시간 3D 오디오를 위한 사운드 렌더링 IP 개발</td>
-            <td class="col2">산업통상자원부</td>
-            <td class="col3">Apr-20</td>
-            <td class="col4">Dec-22</td>
-        </tr>
-        <tr>
-            <td class="col1">인공지능 가속을 위한 부동소수점 연산기 설계</td>
-            <td class="col2">세종대학교 산학협력단</td>
-            <td class="col3">Mar-19</td>
-            <td class="col4">Jan-21</td>
-        </tr>
-        <tr>
-            <td class="col1">극사실적인 실시간 가상현실을 위한 모바일 GPU 하드웨어 개발</td>
-            <td class="col2">과학기술정보통신부</td>
-            <td class="col3">Jun-17</td>
-            <td class="col4">Dec-21</td>
-        </tr>
-        <tr>
-            <td class="col1">딥러닝 기반 상황인식용 임베디드 gp-gpu기술 개발</td>
-            <td class="col2">산업통상자원부</td>
-            <td class="col3">Jun-17</td>
-            <td class="col4">Dec-21</td>
-        </tr>
-        <tr>
-            <td class="col1">가상현실 감성경험 극대화 기반 피로도와 현실감 정량화 기술</td>
-            <td class="col2">삼성전자 미래 기술육성센터</td>
-            <td class="col3">Dec-17</td>
-            <td class="col4">Dec-20</td>
-        <tr>
-            <td class="col1">모바일 플랫품 기반 엔터테이먼트 VR 기술 연구(ITRC)</td>
-            <td class="col2">과학기술정보통신부</td>
-            <td class="col3">Jun-16</td>
-            <td class="col4">Dec-21</td>
-        </tr>
-        <tr>
-            <td class="col1">BK-21 plus 산업</td>
-            <td class="col2">한국연구재단</td>
-            <td class="col3">Jan-13</td>
-            <td class="col4">Sep-20</td>
-        </tr>
-        <tr>
-            <td class="col1">산업용 무인비행장치 전문인력 양성사업</td>
-            <td class="col2">산업통상자원부</td>
-            <td class="col3">Sep-17</td>
-            <td class="col4">Sep-19</td>
-        </tr>
+      {% endfor %}
     </tbody>
-</table>
-
-
-<!--
----
-title: "Projects"
-layout: default
-excerpt: "RT2 Lab at Institut Curie"
-sitemap: false
-permalink: /projects.html
----
-<h1>{{page.title}}</h1>
-
-<ul class="list-unstyled">
-    {% for article in site.data.projects %}
-        <li class="media">
-            <div class="media-body">
-            <h4 class="mt-0 mb-1">{{ article.title }}</h4>
-            <p><small>{{ article.date }}</small></p>
-            {{ article.content }}
-            </div>
-        </li>
-    {% endfor %}
-</ul>
--->
+  </table>
+</div>

@@ -1,63 +1,80 @@
 ---
-title: "Team"
+title: "Professor"
 layout: default
-excerpt: "RT2 Lab: Team members"
+excerpt: "MPL professor"
 sitemap: false
 permalink: /team/
+member_section: professor
 ---
 
 {% assign staff_members = site.posts | where: 'category', 'staff' | sort: 'date' %}
-{% assign student_members = site.posts | where: 'category', 'student' | sort: 'date' %}
-{% assign alumni_members = site.posts | where: 'category', 'alumni' | sort: 'date' %}
-{% assign phd_students = student_members | where: 'role', 'Ph.D. Student' %}
-{% assign ms_students = student_members | where: 'role', 'M.S. Student' %}
-{% assign undergraduate_students = student_members | where: 'role', 'Undergraduate Student' | sort: 'order' %}
-{% assign phd_alumni = alumni_members | where: 'role', 'Ph.D.' %}
-{% assign ms_alumni = alumni_members | where: 'role', 'M.S.' %}
-{% assign bs_alumni = alumni_members | where: 'role', 'BS' %}
 
-{% assign alumni_names = '' %}
-{% assign alumni_count = 0 %}
-{% for member in alumni_members %}
-  {% assign alumni_key = '|' | append: member.title | append: '|' %}
-  {% unless alumni_names contains alumni_key %}
-    {% assign alumni_names = alumni_names | append: alumni_key %}
-    {% assign alumni_count = alumni_count | plus: 1 %}
-  {% endunless %}
-{% endfor %}
-
-<div class="team-page">
-  <h1 class="team-page-title">Member</h1>
-
-  <section class="team-section" id="staff">
-    <div class="team-section-heading">
-      <h2>Professor</h2>
-      <span>{{ staff_members | size }} member</span>
+<div class="section-layout team-page">
+  {% include member-tabs.html %}
+  <div class="section-content">
+    <div class="page-hero team-page-hero">
+      <p class="page-eyebrow">Members</p>
+      <h1>Professor</h1>
     </div>
-    <div class="team-grid team-grid--featured">
-      {% for member in staff_members %}
-        {% include team-member-card.html member=member featured=true %}
-      {% endfor %}
-    </div>
-  </section>
 
-  <section class="team-section" id="student">
-    <div class="team-section-heading">
-      <h2>Students</h2>
-      <span>{{ student_members | size }} members</span>
-    </div>
-    {% include team-member-group.html title='Ph.D.' members=phd_students %}
-    {% include team-member-group.html title='M.S.' members=ms_students %}
-    {% include team-member-group.html title='Undergraduate' members=undergraduate_students %}
-  </section>
+    {% for member in staff_members %}
+      <section class="professor-profile">
+        <div class="professor-identity">
+          <div class="professor-photo-wrap">
+            <img src="{{ '/images/team/' | append: member.image | relative_url }}" alt="{{ member.title }} profile photo">
+          </div>
+          <p class="professor-identity-role">Professor</p>
+          <h2>{{ member.title }}</h2>
+          <p class="professor-english-name">Woo Chan PARK</p>
+          <p class="professor-role">{{ member.role }}</p>
+          <a class="professor-email" href="mailto:{{ member.email | strip }}">{{ member.email | strip }}</a>
+        </div>
+        <div class="professor-details">
+          <header class="professor-profile-heading">
+            <p>Sejong University</p>
+            <h2>Profile</h2>
+          </header>
 
-  <section class="team-section" id="alumni">
-    <div class="team-section-heading">
-      <h2>Alumni</h2>
-      <span>{{ alumni_count }} members</span>
-    </div>
-    {% include team-member-group.html title='Ph.D.' members=phd_alumni compact=true dedupe=true %}
-    {% include team-member-group.html title='M.S.' members=ms_alumni compact=true dedupe=true %}
-    {% include team-member-group.html title='BS' members=bs_alumni compact=true dedupe=true %}
-  </section>
+          <section class="professor-cv-section">
+            <h3>Education</h3>
+            <ul class="professor-timeline">
+              <li><time>1989 - 1993</time><span>연세대학교 전산과학과 (B.S.)</span></li>
+              <li><time>1993 - 1995</time><span>연세대학교 컴퓨터과학 (M.S.)</span></li>
+              <li><time>1995 - 2000</time><span>연세대학교 컴퓨터과학 (Ph.D.)</span></li>
+            </ul>
+          </section>
+
+          <section class="professor-cv-section professor-research">
+            <h3>Research Areas</h3>
+            <div class="professor-research-topic">
+              <h4>Real-time Ray Tracing</h4>
+              <ul>
+                <li>Hardware architecture for real-time processing</li>
+                <li>Algorithm &amp; architecture for performance improvement</li>
+                <li>FPGA implementation</li>
+                <li>Game engine for ray tracing</li>
+              </ul>
+            </div>
+            <div class="professor-research-topic">
+              <h4>GPU Architecture for Mobile Devices</h4>
+              <ul>
+                <li>Algorithm &amp; architecture of 2D vector/3D graphics</li>
+                <li>Compression-based intelligent memory system</li>
+                <li>FPGA implementation</li>
+              </ul>
+            </div>
+            <div class="professor-research-topic">
+              <h4>Other Areas</h4>
+              <ul>
+                <li>Lossless data compression</li>
+                <li>Computer arithmetic (FPU, elementary functions, etc.)</li>
+              </ul>
+            </div>
+          </section>
+
+          <a class="professor-source" href="https://prof.sejong.ac.kr/pwchan/html/sample_html.do" target="_blank" rel="noopener noreferrer">Official Sejong University profile</a>
+        </div>
+      </section>
+    {% endfor %}
+  </div>
 </div>

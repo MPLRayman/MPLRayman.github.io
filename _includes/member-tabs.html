@@ -1,0 +1,8 @@
+<aside class="section-sidebar member-sidebar" aria-label="Member pages">
+  <h2><a href="{{ '/team/' | relative_url }}">Members</a></h2>
+  <nav>
+    <a{% if page.member_section == 'professor' %} class="is-active" aria-current="page"{% endif %} href="{{ '/team/' | relative_url }}">Professor</a>
+    <a{% if page.member_section == 'students' %} class="is-active" aria-current="page"{% endif %} href="{{ '/team/students/' | relative_url }}">Students</a>
+    <a{% if page.member_section == 'alumni' %} class="is-active" aria-current="page"{% endif %} href="{{ '/team/alumni/' | relative_url }}">Alumni</a>
+  </nav>
+</aside>

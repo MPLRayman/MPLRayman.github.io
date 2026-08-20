@@ -1,5 +1,13 @@
 [
     {
+        "title": "-S. Choi, E. Kim, U. Kim, J. So, W.-C. Park, and J.-H. Nah, “Extrapolated Asynchronous Sound Propagation for Real-Time Sound Rendering,” IEEE Access, vol. 14, pp. 100956–100967, 2026.",
+        "category": "International_Journal"
+    },
+    {
+        "title": "-H.-K. Lee, H. Kim, D.-Y. Kim, W.-C. Park, and J.-H. Nah, “Considerations for the Acceleration Structure of Sound Propagation on Mobile Devices: Kd-Trees Versus Multi-Bounding Volume Hierarchies,” IEEE Access, vol. 13, pp. 188618–188629, 2025.",
+        "category": "International_Journal"
+    },
+    {
         "title":  "-Y. Han, J. Kim, J. Lee, J.-H. Nah, Y.-S. Ho, and W.-C. Park, “Efficient Haze Removal from a Single Image Using a DCP-Based Lightweight U-Net Neural Network Model,” Sensors, 24(12), Jun. 2024.",
         "category": "International_Journal"
     },

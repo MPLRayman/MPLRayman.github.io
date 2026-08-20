@@ -1,29 +1,24 @@
-<div id="footer" class="panel">
-  <div class="panel-footer">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-sm-4">
-				<p>{{ site.title }}</p>
-				<img class="img-fluid" src="{{ site.baseurl }}/images/logo/sejonglogo.svg"
-				     style="max-width: 100px;">
-			</div>
+<footer id="footer" class="site-footer">
+  <div class="container-fluid">
+    <div class="site-footer-grid">
+      <div>
+        <p class="site-footer-title">{{ site.title }}</p>
+        <img class="site-footer-logo" src="{{ '/images/logo/mpl-logo.png' | relative_url }}" alt="MPL, Media Processor Lab, Sejong University">
+      </div>
 
-			<div class="col-sm-4">
-				<p>Email : pwchan@sejong.ac.kr</p>
-				<p>Tel : 070-7716-8003</p>
-				<p>Address : 209, Neungdong-ro, Gwangjin-gu, Seoul, Republic of Korea</p>
-			</div>
-		</div>
+      <div class="site-footer-contact">
+        <p><strong>Email</strong> pwchan@sejong.ac.kr</p>
+        <p><strong>Tel</strong> 070-7716-8003</p>
+        <p><strong>Address</strong> 209, Neungdong-ro, Gwangjin-gu, Seoul, Republic of Korea</p>
+      </div>
+    </div>
 
-		<div class="row mt-3">
-			<p class="text-center">Copyright, 2019</p>
-		</div>
-	</div>
+    <p class="site-footer-copy">Copyright, 2019</p>
   </div>
-</div>
+</footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="{{ site.url }}{{ site.baseurl }}/js/bootstrap.min.js"></script>
+<script src="{{ '/js/bootstrap.min.js' | relative_url }}"></script>
 
 
 <!--

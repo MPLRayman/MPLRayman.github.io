@@ -1,37 +1,9 @@
 ---
-title1: "Ray-tracing GPU Technology"
-title1: "Sound-tracing Technology"
-title1: "Real-time AI Technology Denoising"
-title1: "Real-time AI Technology Dehazing"
-title1: "Sound-tracing Technology 실시간으로 처리하는 기술"
-title1: "Sound-tracing Technology 사운드트레이싱 반도체 스타트업 세종피아 박우찬 대표 인터뷰"
-
-
+title: "Board"
 layout: default
-excerpt: "RT2 Lab -- Publications."
+excerpt: "MPL gallery and media"
 sitemap: false
-permalink: /video/
+permalink: /board/
 ---
 
-<h1>{{page.title1}}</h1>
-<h2>{{page.title1}}</h2>
-<h3>{{page.title1}}</h3>
-<h4>{{page.title1}}</h4>
-<h5>{{page.title1}}</h5>
-<h6>{{page.title1}}</h6>
-
-<div class="panel-group" id="accordion">
-    <div class="panel panel-default">
-
-    {% for vide in site.data.video %}
-        <div class="panel-heading">
-        </div>
-
-        <div id="collapse{{forloop.index}}" class="panel-collapse collapse">
-            <div class="panel-body">
-                <p>{{ vide.abstract }}</p>
-            </div>
-        </div>
-    {% endfor %}
-    </div>
-</div>
+{% include video-content.html %}

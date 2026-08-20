@@ -1,0 +1,37 @@
+---
+title: "Alumni"
+layout: default
+excerpt: "MPL alumni"
+sitemap: false
+permalink: /team/alumni/
+member_section: alumni
+---
+
+{% assign alumni_members = site.posts | where: 'category', 'alumni' | sort: 'date' %}
+{% assign phd_alumni = alumni_members | where: 'role', 'Ph.D.' %}
+{% assign ms_alumni = alumni_members | where: 'role', 'M.S.' %}
+{% assign bs_alumni = alumni_members | where: 'role', 'BS' %}
+
+{% assign phd_names = '' %}{% assign phd_count = 0 %}
+{% for member in phd_alumni %}{% assign key = '|' | append: member.title | append: '|' %}{% unless phd_names contains key %}{% assign phd_names = phd_names | append: key %}{% assign phd_count = phd_count | plus: 1 %}{% endunless %}{% endfor %}
+{% assign ms_names = '' %}{% assign ms_count = 0 %}
+{% for member in ms_alumni %}{% assign key = '|' | append: member.title | append: '|' %}{% unless ms_names contains key %}{% assign ms_names = ms_names | append: key %}{% assign ms_count = ms_count | plus: 1 %}{% endunless %}{% endfor %}
+{% assign bs_names = '' %}{% assign bs_count = 0 %}
+{% for member in bs_alumni %}{% assign key = '|' | append: member.title | append: '|' %}{% unless bs_names contains key %}{% assign bs_names = bs_names | append: key %}{% assign bs_count = bs_count | plus: 1 %}{% endunless %}{% endfor %}
+
+<div class="section-layout team-page">
+  {% include member-tabs.html %}
+  <div class="section-content">
+    <div class="page-hero team-page-hero">
+      <p class="page-eyebrow">Members</p>
+      <h1>Alumni</h1>
+      <p class="page-lead">Ph.D. {{ phd_count }} · M.S. {{ ms_count }}{% if bs_count > 0 %} · B.S. {{ bs_count }}{% endif %}</p>
+    </div>
+
+    <section class="team-section">
+      {% include team-member-group.html title='Ph.D.' members=phd_alumni compact=true dedupe=true %}
+      {% include team-member-group.html title='M.S.' members=ms_alumni compact=true dedupe=true %}
+      {% include team-member-group.html title='B.S.' members=bs_alumni compact=true dedupe=true %}
+    </section>
+  </div>
+</div>

@@ -5,30 +5,39 @@ excerpt: "RT2 Lab at Institut Curie"
 sitemap: false
 permalink: /news/
 ---
-<h1>{{page.title}}</h1> 
 
-<ul class="list-unstyled">
-    {% for article1 in site.data.news%}
-        <li class="media">
-            <div class="media-body">
-            <h4 class="mt-0 mb-1">{{ article1.title }}</h4>
-            <p><small>{{ article1.date }}</small></p>
-            {{ article1.content }}
-            </div>
-        </li>
+<div class="page-hero">
+  <p class="page-eyebrow">News & Awards</p>
+  <h1>Lab updates and recognitions.</h1>
+  <p class="page-lead">Selected media coverage, project milestones, and awards from MPL.</p>
+</div>
+
+<section class="story-section">
+  <div class="section-heading">
+    <h2>News</h2>
+    <span>{{ site.data.news | size }} items</span>
+  </div>
+  <ol class="story-list">
+    {% for article in site.data.news %}
+      <li class="story-item">
+        <span class="story-index">{{ forloop.index }}</span>
+        <div class="story-content">{{ article.content }}</div>
+      </li>
     {% endfor %}
-</ul>
+  </ol>
+</section>
 
-<h1>Awards</h1>
-
-<ul class="list-unstyled">
-    {% for article2 in site.data.awards%}
-        <li class="media">
-            <div class="media-body">
-            <h4 class="mt-0 mb-1">{{ article2.title }}</h4>
-            <p><small>{{ article2.date }}</small></p>
-            {{ article2.content }}
-            </div>
-        </li>
+<section class="story-section">
+  <div class="section-heading">
+    <h2>Awards</h2>
+    <span>{{ site.data.awards | size }} items</span>
+  </div>
+  <ol class="story-list story-list--awards">
+    {% for article in site.data.awards %}
+      <li class="story-item">
+        <span class="story-index">{{ forloop.index }}</span>
+        <div class="story-content">{{ article.content }}</div>
+      </li>
     {% endfor %}
-</ul>
+  </ol>
+</section>

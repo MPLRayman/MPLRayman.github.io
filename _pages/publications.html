@@ -6,59 +6,48 @@ sitemap: false
 permalink: /publications/
 ---
 
-<h1>{{ page.title }}</h1>
+{% assign International_Journal = site.data.publications | where: "category", "International_Journal" %}
+{% assign International_Conferences = site.data.publications | where: "category", "International_Conferences" %}
 
-<div class="panel-group" id="accordion">
-
-    <!-- Journal Articles Section -->
-    <h2>International_Journal</h2>
-    {% assign International_Journal = site.data.publications | where: "category", "International_Journal" %}
-    {% for publi in International_Journal %}
-        <div class="panel-heading">
-            {{ publi.title }}
-        </div>
-        <div id="collapse{{ forloop.index }}" class="panel-collapse collapse">
-            <div class="panel-body">
-                <p>{{ publi.abstract }}</p>
-            </div>
-        </div>
-    {% endfor %}
-
-    <!-- Conference Papers Section -->
-    <h2>International_Conferences</h2>
-    {% assign International_Conferences = site.data.publications | where: "category", "International_Conferences" %}
-    {% for publi in International_Conferences %}
-        <div class="panel-heading">
-            {{ publi.title }}
-        </div>
-        <div id="collapse{{ forloop.index }}" class="panel-collapse collapse">
-            <div class="panel-body">
-                <p>{{ publi.abstract }}</p>
-            </div>
-        </div>
-    {% endfor %}
-
+<div class="page-hero">
+  <p class="page-eyebrow">Publications</p>
+  <h1>Selected journal and conference papers.</h1>
+  <p class="page-lead">Research outputs in real-time graphics, hardware architecture, sound propagation, compression, and AI systems.</p>
 </div>
 
+<div class="publication-summary">
+  <div>
+    <strong>{{ International_Journal | size }}</strong>
+    <span>International Journal</span>
+  </div>
+  <div>
+    <strong>{{ International_Conferences | size }}</strong>
+    <span>International Conferences</span>
+  </div>
+</div>
 
-<!-- <h1>{{page.title}}</h1>
-
-<div class="panel-group" id="accordion">
-    <div class="panel panel-default">
-
-    {% for publi in site.data.publications %}
-        <div class="panel-heading">
-            
-            "{{ publi.title }}",
-            </a>
-        </div>
-
-        <div id="collapse{{forloop.index}}" class="panel-collapse collapse">
-            <div class="panel-body">
-                <p>{{ publi.abstract }}</p>
-
-            </div>
-        </div>
+<section class="publication-section">
+  <div class="section-heading">
+    <h2>International Journal</h2>
+  </div>
+  <ul class="publication-list">
+    {% for publi in International_Journal %}
+      <li class="publication-item">
+        <span>{{ publi.title | remove_first: '-' | strip }}</span>
+      </li>
     {% endfor %}
-    </div>
-</div> -->
+  </ul>
+</section>
+
+<section class="publication-section">
+  <div class="section-heading">
+    <h2>International Conferences</h2>
+  </div>
+  <ul class="publication-list">
+    {% for publi in International_Conferences %}
+      <li class="publication-item">
+        <span>{{ publi.title | remove_first: '-' | strip }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
