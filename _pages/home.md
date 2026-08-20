@@ -19,7 +19,7 @@ permalink: /
   <p>졸업생들은 Nvidia, 삼성전자, LG전자 및 다양한 반도체/IT 기업에서 활동하고 있습니다.</p>
 </section>
 
-<section class="home-focus">
+<section class="home-focus" markdown="0">
   <div class="home-section-heading">
     <h2>Research Areas</h2>
   </div>
