@@ -17,7 +17,7 @@ permalink: /news/
     <h2>News</h2>
     <span>{{ site.data.news | size }} items</span>
   </div>
-  <ol class="story-list">
+  <ol class="story-list" data-paginated-list data-page-size="5" data-pagination-label="News">
     {% for article in site.data.news %}
       <li class="story-item">
         <span class="story-index">{{ forloop.index }}</span>
@@ -32,7 +32,7 @@ permalink: /news/
     <h2>Awards</h2>
     <span>{{ site.data.awards | size }} items</span>
   </div>
-  <ol class="story-list story-list--awards">
+  <ol class="story-list story-list--awards" data-paginated-list data-page-size="5" data-pagination-label="Awards">
     {% for article in site.data.awards %}
       <li class="story-item">
         <span class="story-index">{{ forloop.index }}</span>

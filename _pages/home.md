@@ -25,19 +25,25 @@ permalink: /
   </div>
   <div class="home-focus-grid">
     <article>
-      <span class="home-focus-index">01</span>
-      <h3>GPU Architecture</h3>
-      <p>Real-time ray tracing, path tracing, low-power mobile GPU architecture.</p>
+      <a class="home-focus-link" href="{{ '/research/' | relative_url }}#gpu-rendering">
+        <span class="home-focus-index">01</span>
+        <h3>GPU Architecture</h3>
+        <p>Real-time ray tracing, path tracing, low-power mobile GPU architecture.</p>
+      </a>
     </article>
     <article>
-      <span class="home-focus-index">02</span>
-      <h3>AI HW/SW</h3>
-      <p>On-device denoising, dehazing, audio AI, and hardware acceleration.</p>
+      <a class="home-focus-link" href="{{ '/research/' | relative_url }}#on-device-ai">
+        <span class="home-focus-index">02</span>
+        <h3>AI HW/SW</h3>
+        <p>On-device denoising, dehazing, audio AI, and hardware acceleration.</p>
+      </a>
     </article>
     <article>
-      <span class="home-focus-index">03</span>
-      <h3>3D Audio</h3>
-      <p>Sound tracing algorithms and processors for immersive spatial audio.</p>
+      <a class="home-focus-link" href="{{ '/research/' | relative_url }}#sound-tracing">
+        <span class="home-focus-index">03</span>
+        <h3>3D Audio</h3>
+        <p>Sound tracing algorithms and processors for immersive spatial audio.</p>
+      </a>
     </article>
   </div>
 </section>

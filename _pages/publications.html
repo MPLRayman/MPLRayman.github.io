@@ -30,7 +30,7 @@ permalink: /publications/
   <div class="section-heading">
     <h2>International Journal</h2>
   </div>
-  <ul class="publication-list">
+  <ul class="publication-list" data-paginated-list data-page-size="5" data-pagination-label="International Journal">
     {% for publi in International_Journal %}
       <li class="publication-item">
         <span>{{ publi.title | remove_first: '-' | strip }}</span>
@@ -43,7 +43,7 @@ permalink: /publications/
   <div class="section-heading">
     <h2>International Conferences</h2>
   </div>
-  <ul class="publication-list">
+  <ul class="publication-list" data-paginated-list data-page-size="5" data-pagination-label="International Conferences">
     {% for publi in International_Conferences %}
       <li class="publication-item">
         <span>{{ publi.title | remove_first: '-' | strip }}</span>
