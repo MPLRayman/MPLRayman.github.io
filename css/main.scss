@@ -2145,6 +2145,16 @@ body {
   line-height: 1.12;
 }
 
+.home-title-nowrap {
+  white-space: nowrap;
+}
+
+@media (min-width: 992px) {
+  .home-title-group {
+    display: inline-block;
+  }
+}
+
 .home-section h2,
 .home-section-heading h2 {
   color: #263746;
