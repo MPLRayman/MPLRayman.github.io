@@ -8,7 +8,7 @@ permalink: /
 
 <section class="home-intro">
   <p class="page-eyebrow">Media Processor Lab</p>
-  <h1>Real-time GPU and AI hardware research.</h1>
+  <h1>Next-Generation GPU and AI hardware research.</h1>
   <p class="page-lead">MPL은 고성능 저전력 GPU, AI HW/SW, 3D 사운드 기술을 중심으로 알고리즘부터 시스템 반도체 설계까지 이어지는 연구를 수행합니다.</p>
 </section>
 
